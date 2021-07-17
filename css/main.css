@@ -1,0 +1,89 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: #111111;
+}
+.container .box{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background: red;
+    margin: 10px;
+    overflow: hidden;
+}
+.container .box .img-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+.container .box .img-box.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.container .box .img-box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .box .img-box.active img{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+}
+.container .box .img-box h2{
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+.container .box .img-box.active h2{
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 15px;
+    letter-spacing: 4px;
+}
+.container .box .img-box .content{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    left: 50px;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: #ffffff;
+    transform: translateY(100%);
+}
+.container .box .img-box.active .content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s;
+}
